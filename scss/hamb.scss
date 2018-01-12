@@ -2,58 +2,75 @@ body {
   background-color: #FF8C00;
 }
 
-.icon {
+.icon-1, .icon-2 {
   background: #fff;
   height: 150px;
   width: 150px;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%);
   border-radius: 20px;
   cursor: pointer;
-  .hamburger {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    position: relative;
     height: 10px;
     width: 100px;
     background-color: #FF8C00;
     border-radius: 5px;
     transition: all 0.5s;
-    &:before, &:after {
-      content: "";
-      position: absolute;
-      height: 10px;
-      width: 100px;
-      background-color: #FF8C00;
-      border-radius: 5px;
-      transition: all 0.5s;
-    }
-    &:before {
-      top: -30px;
-      transform: rotate(0);
-    }
-    &:after {
-      top: 30px;
-      transform: rotate(0);
-    }
   }
-  &.active {
-    .hamburger {
-      background-color: transparent;
-      &:before {
-        transform: rotate(45deg);
-        top: 0;
-      }
-      &:after {
-        transform: rotate(135deg);
-        top: 0;
-      }
+  span:first-child {
+    top: -20px;
+  }
+  span:nth-child(2) {
+    top: 0;
+    left: 0;
+  }
+  span:last-child {
+    top: 20px;
+  }
+}
+
+.icon-1 {
+  top: 150px;
+  &.closed {
+    span:first-child {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+    span:nth-child(2) {
+      left: -100px;
+      opacity: 0;
+    }
+    span:last-child {
+      transform: rotate(-45deg);
+      top: -10px;
     }
   }
 }
+
+.icon-2 {
+  top: 350px;
+  &.closed {
+    span:first-child {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+    span:nth-child(2) {
+      left: -100px;
+      opacity: 0;
+    }
+    span:last-child {
+      transform: rotate(135deg);
+      top: -10px;
+    }
+  }
+}
+
 
 nav {
   position: fixed;

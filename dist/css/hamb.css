@@ -1,48 +1,57 @@
 body {
   background-color: #FF8C00; }
 
-.icon {
+.icon-1, .icon-2 {
   background: #fff;
   height: 150px;
   width: 150px;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   border-radius: 20px;
-  cursor: pointer; }
-  .icon .hamburger {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .icon-1 span, .icon-2 span {
+    position: relative;
     height: 10px;
     width: 100px;
     background-color: #FF8C00;
     border-radius: 5px;
     transition: all 0.5s; }
-    .icon .hamburger:before, .icon .hamburger:after {
-      content: "";
-      position: absolute;
-      height: 10px;
-      width: 100px;
-      background-color: #FF8C00;
-      border-radius: 5px;
-      transition: all 0.5s; }
-    .icon .hamburger:before {
-      top: -30px;
-      transform: rotate(0); }
-    .icon .hamburger:after {
-      top: 30px;
-      transform: rotate(0); }
-  .icon.active .hamburger {
-    background-color: transparent; }
-    .icon.active .hamburger:before {
-      transform: rotate(45deg);
-      top: 0; }
-    .icon.active .hamburger:after {
-      transform: rotate(135deg);
-      top: 0; }
+  .icon-1 span:first-child, .icon-2 span:first-child {
+    top: -20px; }
+  .icon-1 span:nth-child(2), .icon-2 span:nth-child(2) {
+    top: 0;
+    left: 0; }
+  .icon-1 span:last-child, .icon-2 span:last-child {
+    top: 20px; }
+
+.icon-1 {
+  top: 150px; }
+  .icon-1.closed span:first-child {
+    transform: rotate(45deg);
+    top: 10px; }
+  .icon-1.closed span:nth-child(2) {
+    left: -100px;
+    opacity: 0; }
+  .icon-1.closed span:last-child {
+    transform: rotate(-45deg);
+    top: -10px; }
+
+.icon-2 {
+  top: 350px; }
+  .icon-2.closed span:first-child {
+    transform: rotate(45deg);
+    top: 10px; }
+  .icon-2.closed span:nth-child(2) {
+    left: -100px;
+    opacity: 0; }
+  .icon-2.closed span:last-child {
+    transform: rotate(135deg);
+    top: -10px; }
 
 nav {
   position: fixed;

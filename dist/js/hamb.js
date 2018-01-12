@@ -1,10 +1,10 @@
 $(document).ready(function(){
-  $('.icon').on('click', function(){
-    if($(this).hasClass('active')) {
-      $(this).removeClass('active');
+  $('.icon-1,.icon-2').on('click', function(){
+    if($(this).hasClass('closed')) {
+      $(this).removeClass('closed');
       $('nav').removeClass('active');
     } else {
-      $(this).addClass('active');
+      $(this).addClass('closed');
       $('nav').addClass('active');
     }
   });
