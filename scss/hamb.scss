@@ -1,27 +1,54 @@
+/***********
+  ALL VARIABLES
+***********/
+$orange: #FF8C00;
+$white: #fff;
+$icon-size: 150px;
+$icon-radius: 20px;
+$span-height: 10px;
+$span-width: 100px;
+$span-radius: 5px;
+$transition: all 0.5s;
+$transition-sm: all 0.3s;
+$transition-lg: all 0.7s;
+
+
 body {
-  background-color: #FF8C00;
+  background-color: $orange;
 }
 
-.icon-1, .icon-2 {
-  background: #fff;
-  height: 150px;
-  width: 150px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  border-radius: 20px;
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.icon {
+  position: relative;
+  background: $white;
+  height: $icon-size;
+  width: $icon-size;
+  border-radius: $icon-radius;
   cursor: pointer;
+  margin: 50px;
+}
+
+/***********
+  ICON 1
+***********/
+.icon-1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   span {
     position: relative;
-    height: 10px;
-    width: 100px;
-    background-color: #FF8C00;
-    border-radius: 5px;
-    transition: all 0.5s;
+    height: $span-height;
+    width: $span-width;
+    background-color: $orange;
+    border-radius: $span-radius;
+    transition: $transition;
   }
   span:first-child {
     top: -20px;
@@ -33,10 +60,6 @@ body {
   span:last-child {
     top: 20px;
   }
-}
-
-.icon-1 {
-  top: 150px;
   &.closed {
     span:first-child {
       transform: rotate(45deg);
@@ -53,8 +76,32 @@ body {
   }
 }
 
+/***********
+  ICON 2
+***********/
 .icon-2 {
-  top: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    position: relative;
+    height: $span-height;
+    width: $span-width;
+    background-color: $orange;
+    border-radius: $span-radius;
+    transition: $transition;
+  }
+  span:first-child {
+    top: -20px;
+  }
+  span:nth-child(2) {
+    top: 0;
+    left: 0;
+  }
+  span:last-child {
+    top: 20px;
+  }
   &.closed {
     span:first-child {
       transform: rotate(45deg);
@@ -71,24 +118,205 @@ body {
   }
 }
 
+/***********
+  ICON 3
+***********/
+.icon-3 {
+  span {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: $span-height;
+    width: $span-width;
+    background-color: $orange;
+    border-radius: $span-radius;
+    transition: $transition;
+  }
+  span:first-child {
+    top: 40px;
+  }
+  span:nth-child(2) {
+    top: 70px;
+  }
+  span:nth-child(3) {
+    top: 100px;
+  }
+  span:nth-child(4) {
+    top: -40px;
+    transform: rotate(45deg);
+    left: -60%;
+    opacity: 0;
+    transition: $transition-lg;
+  }
+  span:last-child {
+    top: -40px;
+    transform: rotate(-45deg);
+    left: 90%;
+    opacity: 0;
+    transition: $transition-lg;
+  }
+  &.closed {
+    span:first-child {
+      left: -150%;
+      opacity: 0;
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      left: 150%;
+      opacity: 0;
+    }
+    span:nth-child(4) {
+      top: 70px;
+      left: 50%;
+      transform: translate(-50%) rotate(45deg);
+      opacity: 1;
+    }
+    span:last-child {
+      top: 70px;
+      left: 50%;
+      transform: translate(-50%) rotate(-45deg);
+      opacity: 1;
+    }
+  }
+}
 
+/***********
+  ICON 4
+***********/
+.icon-4 {
+  span {
+    position: absolute;
+    height: $span-height;
+    background-color: $orange;
+    transition: $transition;
+  }
+  span:first-child, span:nth-child(2), span:nth-child(4), span:last-child {
+    width: $span-width/2;
+  }
+  span:first-child {
+    top: 40px;
+    left: 25px;
+    border-radius: 5px 0 0 5px;
+  }
+  span:nth-child(2) {
+    top: 40px;
+    left: 75px;
+    border-radius: 0 5px 5px 0;
+  }
+  span:nth-child(3) {
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    width: $span-width;
+    border-radius: 5px;
+  }
+  span:nth-child(4) {
+    top: 100px;
+    left: 25px;
+    border-radius: 5px 0 0 5px;
+  }
+  span:last-child {
+    top: 100px;
+    left: 75px;
+    border-radius: 0 5px 5px 0;
+  }
+  &.closed {
+    span:first-child {
+      transform-origin: bottom left;
+      transform: translate(-50%) rotate(45deg);
+      left: calc(50% - 10px);
+      top: 35px;
+    }
+    span:nth-child(2) {
+      transform-origin: bottom right;
+      transform: translate(-50%) rotate(-45deg);
+      left: calc(50% + 15px);
+      top: 35px;
+    }
+    span:nth-child(3) {
+      opacity: 0;
+    }
+    span:nth-child(4) {
+      transform-origin: top left;
+      transform: translate(-50%) rotate(-45deg);
+      left: calc(50% - 10px);
+      top: 105px;
+    }
+    span:last-child {
+      transform-origin: top right;
+      transform: translate(-50%) rotate(45deg);
+      left: calc(50% + 15px);
+      top: 105px;
+    }
+  }
+}
+
+/***********
+  ICON 5
+***********/
+.icon-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    position: relative;
+    height: $span-height;
+    width: $span-width;
+    background-color: $orange;
+    border-radius: $span-radius;
+    transition: top 0.3s, transform 0.3s 0.3s;
+  }
+  span:first-child {
+    top: -20px;
+  }
+  span:nth-child(2) {
+    top: 0;
+    left: 0;
+  }
+  span:last-child {
+    top: 20px;
+  }
+  &.closed {
+    span:first-child {
+      top: 10px;
+      transform: rotate(-45deg);
+    }
+    span:nth-child(2) {
+      left: -100px;
+      opacity: 0;
+    }
+    span:last-child {
+      top: -10px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+
+/***********
+  EXAMPLE NAVIGATION
+***********/
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 0;
-  background-color: #fff;
-  transition: all 0.5s;
+  background-color:$white;
+  transition: $transition;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   p {
     opacity: 0;
-    transition: all 0.3s;
+    transition: $transition-sm;
     font-size: 30px;
     font-weight: bold;
-    color: #FF8C00;
+    color: $orange;
   }
   &.active {
     height: 100px;
