@@ -7,7 +7,7 @@
   </head>
   <body>
 
-    <nav>
+    <nav class="nav">
       <p>MENU</p>
     </nav>
 
@@ -43,8 +43,24 @@
       </div>
     </div> <!-- END CONTAINER -->
 
-    <!-- ALL SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="dist/js/hamb.js"></script>
+    <!-- script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+          const elArr = document.querySelectorAll('.icon');
+          const nav = document.querySelector('nav');
+          elArr.forEach(function(el) {
+              el.addEventListener("click", function() {
+                if (this.classList.contains('closed')) {
+                    this.classList.remove('closed');
+                    nav.classList.remove('active');
+                  } else {
+                    this.classList.add('closed');
+                    nav.classList.add('active');
+                  }
+              });
+          });
+      });
+    </script>
+
   </body>
 </html>
