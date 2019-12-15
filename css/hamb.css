@@ -2,14 +2,14 @@
   ALL VARIABLES
 ***********/
 :root {
+  font-size: 62.5%;
   --clrPrimary: #FF8C00;
   --clrLight: #fff;
-  --iconBorderRadius: 1rem;
-  --iconSize: 8rem;
-  --iconLineHeight: 0.5rem;
-  --iconLineWidth: calc(var(--iconSize) - 2rem); 
-  --iconLineDistance: 1.35rem;
-  --iconLineBorderRadius: 0.5rem;
+  --iconBorderRadius: 1.5rem;
+  --iconSize: 12rem;
+  --iconLineHeight: 0.75rem;
+  --iconLineWidth: 9rem; 
+  --iconLineBorderRadius: 1rem;
   --trsSpeed: 0.25s;
 }
 
@@ -53,7 +53,8 @@ ALL ICONS
 
 /* ICON 1 */ 
 .icon1 span,
-.icon2 span {
+.icon2 span,
+.icon3 span  {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -66,7 +67,7 @@ ALL ICONS
 
 .icon1 span:nth-child(1),
 .icon2 span:nth-child(1) {
-  top: calc(50% - var(--iconLineDistance));
+  top: calc(50% - 2rem);
 }
 
 .icon1 span:nth-child(2),
@@ -76,11 +77,11 @@ ALL ICONS
 
 .icon1 span:nth-child(3),
 .icon2 span:nth-child(3) {
-  top: calc(50% + var(--iconLineDistance));
+  top: calc(50% + 2rem);
 }
 
 .icon1.closed span:nth-child(1) {
-  transform: translate(-50%, calc(-50% + 22px)) rotate(45deg); 
+  transform: translate(-50%, calc(-50% + 2rem)) rotate(45deg); 
 }
 
 .icon1.closed span:nth-child(2) {
@@ -89,89 +90,113 @@ ALL ICONS
 }
 
 .icon1.closed span:nth-child(3) {
-  transform: translate(-50%, calc(-50% - 22px)) rotate(-45deg);
+  transform: translate(-50%, calc(-50% - 2rem)) rotate(-45deg);
 }
 
 /* ICON 2 */ 
-.icon.icon2 span:nth-child(4) {
-  top: -40px;
-  transform: rotate(45deg);
-  left: -60%;
+.icon.icon2 span:nth-child(4),
+.icon.icon2 span:last-child {
+  top: 50%;
   opacity: 0; 
+}
+
+.icon.icon2 span:nth-child(4) {
+  transform: translate(-50%, -9rem) rotate(45deg);
+  left: -25%;
 }
 
 .icon.icon2 span:last-child {
-  top: -40px;
-  transform: rotate(-45deg);
-  left: 90%;
-  opacity: 0; 
+  transform: translate(-50%, -9rem) rotate(-45deg);
+  left: 120%;
 }
 
-  .icon.icon2.closed span:first-child {
-    left: -150%;
+.icon2.closed span {
+  opacity: 0;
+}
+
+.icon2.closed span:first-child {
+  transform: translate(-150%, -50%);
+}
+
+.icon2.closed span:nth-child(3) {
+  transform: translate(50%, -50%);
+}
+
+.icon2.closed span:nth-child(4),
+.icon2.closed span:last-child {
+  left: 50%;
+  opacity: 1;
+}
+
+.icon2.closed span:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon.icon2.closed span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ICON 3 */ 
+.icon3 span:first-child, 
+.icon3 span:nth-child(2), 
+.icon3 span:nth-child(4), 
+.icon3 span:last-child {
+  width: calc(var(--iconLineWidth) / 2);
+}
+
+.icon3 span:first-child {
+  top: calc(50% - 2rem);
+  transform: translate( calc(-50% - calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: var(--iconLineBorderRadius) 0 0 var(--iconLineBorderRadius); 
+}
+
+.icon3 span:nth-child(2) {
+  top: calc(50% - 2rem);
+  transform: translate( calc(-50% + calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: 0 var(--iconLineBorderRadius) var(--iconLineBorderRadius) 0; 
+}
+
+.icon3 span:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  width: var(--iconLineWidth);
+  border-radius: var(--iconLineBorderRadius);
+}
+
+.icon3 span:nth-child(4) {
+  top: calc(50% + 2rem);
+  transform: translate( calc(-50% - calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: var(--iconLineBorderRadius) 0 0 var(--iconLineBorderRadius); 
+}
+
+.icon3 span:last-child {
+  top: calc(50% + 2rem);
+  transform: translate( calc(-50% + calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: 0 var(--iconLineBorderRadius) var(--iconLineBorderRadius) 0; 
+}
+
+.icon3.closed span:first-child {
+  transform-origin: bottom left;
+  transform: translate(-50% , -50%) rotate(45deg);
+  left: calc(50% - 10px);
+  top: 35px; 
+}
+
+.icon3.closed span:nth-child(2) {
+  transform-origin: bottom right;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  left: calc(50% + 15px);
+  top: 35px; 
+}
+
+  .icon.icon3.closed span:nth-child(3) {
     opacity: 0; }
-  .icon.icon2.closed span:nth-child(2) {
-    opacity: 0; }
-  .icon.icon2.closed span:nth-child(3) {
-    left: 150%;
-    opacity: 0; }
-  .icon.icon2.closed span:nth-child(4) {
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%) rotate(45deg);
-    opacity: 1; }
-  .icon.icon2.closed span:last-child {
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%) rotate(-45deg);
-    opacity: 1; }
-  .icon.icon-4 span {
-    position: absolute;
-    height: 10px;
-    background-color: #FF8C00;
-    transition: all 0.5s ease-in-out; }
-    .icon.icon-4 span:first-child, .icon.icon-4 span:nth-child(2), .icon.icon-4 span:nth-child(4), .icon.icon-4 span:last-child {
-      width: 50px; }
-    .icon.icon-4 span:first-child {
-      top: 40px;
-      left: 25px;
-      border-radius: 5px 0 0 5px; }
-    .icon.icon-4 span:nth-child(2) {
-      top: 40px;
-      left: 75px;
-      border-radius: 0 5px 5px 0; }
-    .icon.icon-4 span:nth-child(3) {
-      top: 70px;
-      left: 50%;
-      transform: translate(-50%);
-      width: 100px;
-      border-radius: 5px; }
-    .icon.icon-4 span:nth-child(4) {
-      top: 100px;
-      left: 25px;
-      border-radius: 5px 0 0 5px; }
-    .icon.icon-4 span:last-child {
-      top: 100px;
-      left: 75px;
-      border-radius: 0 5px 5px 0; }
-  .icon.icon-4.closed span:first-child {
-    transform-origin: bottom left;
-    transform: translate(-50%) rotate(45deg);
-    left: calc(50% - 10px);
-    top: 35px; }
-  .icon.icon-4.closed span:nth-child(2) {
-    transform-origin: bottom right;
-    transform: translate(-50%) rotate(-45deg);
-    left: calc(50% + 15px);
-    top: 35px; }
-  .icon.icon-4.closed span:nth-child(3) {
-    opacity: 0; }
-  .icon.icon-4.closed span:nth-child(4) {
+  .icon.icon3.closed span:nth-child(4) {
     transform-origin: top left;
     transform: translate(-50%) rotate(-45deg);
     left: calc(50% - 10px);
     top: 105px; }
-  .icon.icon-4.closed span:last-child {
+  .icon.icon3.closed span:last-child {
     transform-origin: top right;
     transform: translate(-50%) rotate(45deg);
     left: calc(50% + 15px);
