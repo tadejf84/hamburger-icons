@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hamburger Icon and Menu</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="icon icon1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="icon icon2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="icon icon3">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="icon icon4">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="icon icon5">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div> <!-- END CONTAINER -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+
+          // add click event listener to all icons
+          const elArr = document.querySelectorAll('.icon');
+          elArr.forEach(function(el) {
+              el.addEventListener("click", function() {
+                this.classList.toggle('closed');
+              });
+          });
+      });
+    </script>
+
+  </body>
+</html>

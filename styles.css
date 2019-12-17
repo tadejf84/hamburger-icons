@@ -1,0 +1,380 @@
+/***********
+  ALL VARIABLES
+***********/
+:root {
+  font-size: 62.5%;
+  --clrPrimary: #FF8C00;
+  --clrLight: #fff;
+  --iconBorderRadius: 1.5rem;
+  --iconSize: 12rem;
+  --iconLineHeight: 0.75rem;
+  --iconLineWidth: 9rem; 
+  --iconLineBorderRadius: 1rem;
+  --trsSpeed: 0.25s;
+}
+
+/***********
+GLOBAL STYLES
+***********/
+*, 
+:before, 
+:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  background-color: var(--clrPrimary); 
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+}
+
+/***********
+ALL ICONS
+***********/
+.icon {
+  position: relative;
+  display: inline-block;
+  background: var(--clrLight);
+  height: var(--iconSize);
+  width: var(--iconSize);
+  cursor: pointer;
+  margin: 3rem; 
+  border-radius: var(--iconBorderRadius);
+}
+
+/* ICON 1 */ 
+.icon1 span {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clrPrimary);
+  border-radius: var(--iconLineBorderRadius);
+  height: var(--iconLineHeight);
+  width: var(--iconLineWidth);
+}
+
+.icon1 span:nth-child(1) {
+  top: calc(50% - 2rem);
+  transition: transform var(--trsSpeed) ease-in-out;
+}
+
+.icon1 span:nth-child(2) {
+  top: 50%; 
+  transition: opacity 0.1s 0.15s ease-in-out, transform var(--trsSpeed) ease-in-out;
+}
+
+.icon1 span:last-child {
+  top: calc(50% + 2rem);
+  transition: transform var(--trsSpeed) ease-in-out;
+}
+
+.icon1.closed span:nth-child(1) {
+  transform: translate(-50%, calc(-50% + 2rem)) rotate(135deg); 
+}
+
+.icon1.closed span:nth-child(2) {
+  transform: translate(-50%, calc(-50% - 2rem)) rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, transform var(--trsSpeed) ease-in-out;
+}
+
+.icon1.closed span:last-child {
+  transform: translate(-50%, calc(-50% - 2rem)) rotate(45deg);
+}
+
+/* ICON 2 */ 
+.icon2 span {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clrPrimary);
+  border-radius: var(--iconLineBorderRadius);
+  height: var(--iconLineHeight);
+  width: var(--iconLineWidth);
+  transition: all var(--trsSpeed) ease-in-out;
+}
+
+.icon2 span:nth-child(1) {
+  top: calc(50% - 2rem);
+}
+
+.icon2 span:nth-child(2) {
+  top: 50%;
+}
+
+.icon2 span:nth-child(3) {
+  top: calc(50% + 2rem);
+}
+
+.icon.icon2 span:nth-child(4),
+.icon.icon2 span:last-child {
+  top: 50%;
+  opacity: 0; 
+}
+
+.icon.icon2 span:nth-child(4) {
+  transform: translate(-50%, -9rem) rotate(45deg);
+  left: -25%;
+}
+
+.icon.icon2 span:last-child {
+  transform: translate(-50%, -9rem) rotate(-45deg);
+  left: 120%;
+}
+
+.icon2.closed span {
+  opacity: 0;
+}
+
+.icon2.closed span:first-child {
+  transform: translate(-150%, -50%);
+}
+
+.icon2.closed span:nth-child(3) {
+  transform: translate(50%, -50%);
+}
+
+.icon2.closed span:nth-child(4),
+.icon2.closed span:last-child {
+  left: 50%;
+  opacity: 1;
+}
+
+.icon2.closed span:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon.icon2.closed span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ICON 3 */ 
+.icon3 span {
+  position: absolute;
+  left: 50%;
+  background-color: var(--clrPrimary);
+  border-radius: var(--iconLineBorderRadius);
+  height: var(--iconLineHeight);
+  transition: all var(--trsSpeed) ease-in-out;
+}
+
+.icon3 span:first-child, 
+.icon3 span:nth-child(2), 
+.icon3 span:nth-child(4), 
+.icon3 span:last-child {
+  width: calc(var(--iconLineWidth) / 2);
+}
+
+.icon3 span:first-child {
+  top: calc(50% - 2rem);
+  transform: translate( calc(-50% - calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: var(--iconLineBorderRadius) 0 0 var(--iconLineBorderRadius); 
+}
+
+.icon3 span:nth-child(2) {
+  top: calc(50% - 2rem);
+  transform: translate( calc(-50% + calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: 0 var(--iconLineBorderRadius) var(--iconLineBorderRadius) 0; 
+}
+
+.icon3 span:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--iconLineWidth);
+  border-radius: var(--iconLineBorderRadius);
+}
+
+.icon3 span:nth-child(4) {
+  top: calc(50% + 2rem);
+  transform: translate( calc(-50% - calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: var(--iconLineBorderRadius) 0 0 var(--iconLineBorderRadius); 
+}
+
+.icon3 span:last-child {
+  top: calc(50% + 2rem);
+  transform: translate( calc(-50% + calc(var(--iconLineWidth) / 4)), -50%);
+  border-radius: 0 var(--iconLineBorderRadius) var(--iconLineBorderRadius) 0; 
+}
+
+.icon3.closed span:first-child {
+  transform-origin: bottom left;
+  transform: translate(-50% , calc(-50% - 1rem)) rotate(45deg);
+  left: calc(50% - 10px);
+}
+
+.icon3.closed span:nth-child(2) {
+  transform-origin: bottom right;
+  transform: translate(-50%, calc(-50% - 1rem)) rotate(-45deg);
+  left: calc(50% + 8px);
+}
+
+.icon3.closed span:nth-child(3) {
+  opacity: 0; 
+}
+
+.icon3.closed span:nth-child(4) {
+  transform-origin: top left;
+  transform: translate(-50%, calc(-50% + 1rem)) rotate(-45deg);
+  left: calc(50% - 10px);
+}
+
+.icon3.closed span:last-child {
+  transform-origin: top right;
+  transform: translate(-50%, calc(-50% + 1rem)) rotate(45deg);
+  left: calc(50% + 10px);
+}
+
+/* ICON 4 */ 
+.icon4 span {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clrPrimary);
+  border-radius: var(--iconLineBorderRadius);
+  height: var(--iconLineHeight);
+  width: var(--iconLineWidth); 
+}
+
+.icon4 span:nth-child(1) {
+  top: calc(50% - 2rem);
+  transition: top var(--trsSpeed) var(--trsSpeed) ease-in-out, transform var(--trsSpeed) ease-in-out;
+}
+
+.icon4 span:nth-child(2) {
+  top: 50%; 
+  transition: opacity var(--trsSpeed) ease-in-out;
+}
+
+.icon4 span:last-child {
+  top: calc(50% + 2rem);
+  transition: top var(--trsSpeed) var(--trsSpeed) ease-in-out, transform var(--trsSpeed) ease-in-out;
+}
+
+.icon4.closed span:first-child {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg); 
+  transition: top var(--trsSpeed) ease-in-out, transform var(--trsSpeed) var(--trsSpeed) ease-in-out;
+}
+
+.icon.icon4.closed span:nth-child(2) {
+  opacity: 0; 
+}
+
+.icon.icon4.closed span:last-child {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg); 
+  transition: top var(--trsSpeed) ease-in-out, transform var(--trsSpeed) var(--trsSpeed) ease-in-out;
+}
+
+/* ICON 5 */ 
+.icon5 span {
+  position: absolute;
+  left: 50%;
+  background-color: var(--clrPrimary);
+  border-radius: var(--iconLineBorderRadius);
+  height: var(--iconLineHeight);
+  width: var(--iconLineWidth);
+}
+
+.icon5 span:nth-child(1) {
+  top: calc(50% - 2rem);
+  transform: translate(-50%, -50%) scaleX(1);
+  transition: transform 0.25s 0.5s ease-in-out, top 0.25s 0.25s ease-in-out;
+}
+
+.icon5 span:nth-child(2) {
+  top: 50%; 
+  transform: translate(-50%, -50%) scaleX(1);
+  transition: transform 0.25s 0.5s ease-in-out;
+}
+
+.icon5 span:nth-child(3) {
+  top: calc(50% + 2rem);
+  transform: translate(-50%, -50%) scaleX(1);
+  transition: transform 0.25s 0.5s ease-in-out, top 0.25s 0.25s ease-in-out;
+}
+
+.icon5 span:nth-child(4) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+
+.icon5 span:nth-child(5) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+
+.icon5.closed span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) scaleX(0.1);
+  transition: transform 0.25s ease-in-out, top 0.25s 0.25s ease-in-out;
+}
+
+.icon5.closed span:nth-child(2) {
+  transform: translate(-50%, -50%) scaleX(0.1);
+  transition: transform 0.25s ease-in-out;
+}
+
+.icon5.closed span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) scaleX(0.1);
+  transition: transform 0.25s ease-in-out, top 0.25s 0.25s ease-in-out;
+}
+
+.icon5.closed span:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
+  transition: transform 0.25s 0.5s ease-in-out;
+}
+
+.icon5.closed span:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);
+  transition: transform 0.25s 0.5s ease-in-out;
+}
+
+/* ICON 6 */ 
+.icon6 span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clrPrimary);
+  border-radius: var(--iconLineBorderRadius);
+  height: var(--iconLineHeight);
+  width: var(--iconLineWidth);
+}
+
+.icon6 svg {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.icon6 svg path {
+  fill: none;
+  stroke: black;
+  stroke-width: 8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #F06292;
+  stroke-dasharray: 32 300;
+  transition: all calc(var(--speed) * 2);
+}
+
+.icon6.closed svg path {
+  stroke-dasharray: 16 300;
+	stroke-dashoffset: -85;   
+} 
