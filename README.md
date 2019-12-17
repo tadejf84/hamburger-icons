@@ -1,4 +1,4 @@
 # HAMBURGER ICONS
-A small library of 5 cool hamburger icons.
+A small CSS library with 5 cool hamburger icons. Have fun!
 
 
