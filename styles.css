@@ -51,7 +51,9 @@ ALL ICONS
   border-radius: var(--iconBorderRadius);
 }
 
-/* ICON 1 */ 
+/***********
+ICON 1
+***********/ 
 .icon1 span {
   position: absolute;
   left: 50%;
@@ -91,7 +93,9 @@ ALL ICONS
   transform: translate(-50%, calc(-50% - 2rem)) rotate(45deg);
 }
 
-/* ICON 2 */ 
+/***********
+ICON 2
+***********/  
 .icon2 span {
   position: absolute;
   left: 50%;
@@ -157,7 +161,9 @@ ALL ICONS
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* ICON 3 */ 
+/***********
+ICON 3
+***********/ 
 .icon3 span {
   position: absolute;
   left: 50%;
@@ -234,7 +240,9 @@ ALL ICONS
   left: calc(50% + 10px);
 }
 
-/* ICON 4 */ 
+/***********
+ICON 4
+***********/ 
 .icon4 span {
   position: absolute;
   left: 50%;
@@ -276,7 +284,9 @@ ALL ICONS
   transition: top var(--trsSpeed) ease-in-out, transform var(--trsSpeed) var(--trsSpeed) ease-in-out;
 }
 
-/* ICON 5 */ 
+/***********
+ICON 5
+***********/  
 .icon5 span {
   position: absolute;
   left: 50%;
@@ -342,39 +352,3 @@ ALL ICONS
   transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);
   transition: transform 0.25s 0.5s ease-in-out;
 }
-
-/* ICON 6 */ 
-.icon6 span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--clrPrimary);
-  border-radius: var(--iconLineBorderRadius);
-  height: var(--iconLineHeight);
-  width: var(--iconLineWidth);
-}
-
-.icon6 svg {
-  position: absolute;
-  top: 0;
-  width: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.icon6 svg path {
-  fill: none;
-  stroke: black;
-  stroke-width: 8px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #F06292;
-  stroke-dasharray: 32 300;
-  transition: all calc(var(--speed) * 2);
-}
-
-.icon6.closed svg path {
-  stroke-dasharray: 16 300;
-	stroke-dashoffset: -85;   
-} 
